@@ -67,7 +67,7 @@ exports.create = async (req, res) => {
     const timeNorm = normalizeTime(show_time);
     if (!timeNorm) return res.status(400).json({ success:false, error:'show_time must be HH:MM or HH:MM:SS' });
 
-    const seats = (available_seats === undefined || available_seats === null) ? 50 : Number(available_seats);
+    const seats = (available_seats === undefined || available_seats === null) ? 140 : Number(available_seats);
     if (Number.isNaN(seats) || seats < 0) {
       return res.status(400).json({ success:false, error:'available_seats must be a non-negative number' });
     }
